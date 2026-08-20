@@ -1,0 +1,138 @@
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 50;
+    background-color: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.header-content {
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+}
+
+.logo-svg-wrapper {
+    height: 2.25rem;
+    display: flex;
+    align-items: center;
+    color: var(--color-accent);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.logo-svg-wrapper svg {
+    height: 2rem;
+    width: auto;
+}
+
+.logo:hover .logo-svg-wrapper {
+    transform: scale(1.05);
+}
+
+.logo-text {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.35rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text);
+}
+
+
+.desktop-nav {
+    display: none;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .desktop-nav {
+        display: flex;
+    }
+}
+
+.desktop-nav a {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: color 0.3s;
+}
+
+.desktop-nav a:hover {
+    color: var(--color-accent);
+}
+
+.search-box {
+    display: none;
+    position: relative;
+}
+
+@media (min-width: 1024px) {
+    .search-box {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.search-box input {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    width: 16rem;
+    text-transform: uppercase;
+    transition: border-color 0.3s;
+}
+
+.search-box input:focus {
+    border-color: var(--color-accent);
+    outline: none;
+}
+
+.search-btn {
+    position: absolute;
+    right: 0.75rem;
+    color: var(--color-text-muted);
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    color: var(--color-accent);
+}
+
+.search-btn svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+.mobile-menu-btn {
+    color: var(--color-text);
+    display: block;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .mobile-menu-btn {
+        display: none;
+    }
+}
+
+.mobile-menu-btn svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+

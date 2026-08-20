@@ -1,0 +1,17 @@
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+}
+
+.badge {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: #fff;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.75rem;
+    transform: skewX(-10deg);
+    margin-bottom: 1.5rem;
+}

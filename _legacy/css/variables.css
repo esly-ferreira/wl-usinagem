@@ -1,0 +1,13 @@
+:root {
+    --color-bg: #f8f9fa;
+    --color-surface: #ffffff;
+    --color-surface-hover: #f1f3f5;
+    --color-border: #e5e7eb;
+    --color-text: #111827;
+    --color-text-muted: #64748b;
+    --color-accent: #E10600; /* requested red emphasis color */
+    --color-accent-hover: #c40500;
+
+    --font-heading: 'Chakra Petch', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}

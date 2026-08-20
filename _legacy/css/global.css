@@ -1,0 +1,45 @@
+@import url('variables.css');
+@import url('reset.css');
+
+@import url('layout/header.css');
+@import url('layout/hero.css');
+@import url('layout/sections.css');
+@import url('layout/footer.css');
+
+@import url('components/button.css');
+@import url('components/card.css');
+@import url('components/typography.css');
+
+/* Global settings */
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.text-accent {
+    color: var(--color-accent);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent);
+}
