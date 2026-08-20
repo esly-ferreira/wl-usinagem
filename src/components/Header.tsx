@@ -21,11 +21,11 @@ export default function Header() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-6 font-semibold text-sm">
-          <Link href="#inicio" className="hover:text-primary transition-colors">Início</Link>
-          <Link href="#catalogo" className="hover:text-primary transition-colors">Catálogo</Link>
-          <Link href="#catalogo" className="hover:text-primary transition-colors text-muted hover:text-primary">Linha M8</Link>
-          <Link href="#catalogo" className="hover:text-primary transition-colors text-muted hover:text-primary">Linha M10</Link>
-          <Link href="#aplicacoes" className="hover:text-primary transition-colors">Aplicações</Link>
+          <Link href="/" className="hover:text-primary transition-colors">Início</Link>
+          <Link href="/produtos" className="hover:text-primary transition-colors">Loja</Link>
+          <Link href="/produtos" className="hover:text-primary transition-colors text-muted hover:text-primary">Linha M8</Link>
+          <Link href="/produtos" className="hover:text-primary transition-colors text-muted hover:text-primary">Linha M10</Link>
+          <Link href="/#aplicacoes" className="hover:text-primary transition-colors">Aplicações</Link>
         </nav>
 
         <div className="flex items-center gap-4">
@@ -63,6 +63,19 @@ export default function Header() {
           </button>
         </div>
       </div>
+      
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden absolute top-20 left-0 w-full bg-white border-b border-border shadow-lg z-50 p-4">
+          <nav className="flex flex-col gap-4 font-semibold text-sm">
+            <Link href="/" className="hover:text-primary transition-colors p-2" onClick={() => setIsMobileMenuOpen(false)}>Início</Link>
+            <Link href="/produtos" className="hover:text-primary transition-colors p-2" onClick={() => setIsMobileMenuOpen(false)}>Loja</Link>
+            <Link href="/produtos" className="hover:text-primary transition-colors text-muted p-2" onClick={() => setIsMobileMenuOpen(false)}>Linha M8</Link>
+            <Link href="/produtos" className="hover:text-primary transition-colors text-muted p-2" onClick={() => setIsMobileMenuOpen(false)}>Linha M10</Link>
+            <Link href="/#aplicacoes" className="hover:text-primary transition-colors p-2" onClick={() => setIsMobileMenuOpen(false)}>Aplicações</Link>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }
