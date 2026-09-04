@@ -17,7 +17,7 @@ const chakraPetch = Chakra_Petch({
 });
 
 export const metadata: Metadata = {
-  title: "WL | Componentes de Precisão",
+  title: "BoostFix Usinagem | Componentes de Precisão",
   description: "E-commerce de componentes técnicos e de precisão.",
 };
 

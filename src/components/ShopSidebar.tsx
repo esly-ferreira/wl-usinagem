@@ -36,7 +36,7 @@ export default function ShopSidebar({ filters, setFilters }: ShopSidebarProps) {
                 type="checkbox" 
                 checked={filters.category === cat}
                 onChange={() => handleCategoryChange(cat)}
-                className="w-4 h-4 text-primary rounded border-border focus:ring-primary focus:ring-offset-0 cursor-pointer" 
+                className="w-4 h-4 text-primary rounded-none border-border focus:ring-primary focus:ring-offset-0 cursor-pointer" 
               />
               <span className="text-sm text-muted group-hover:text-text-main transition-colors">{cat}</span>
             </label>
@@ -54,7 +54,7 @@ export default function ShopSidebar({ filters, setFilters }: ShopSidebarProps) {
                 type="checkbox" 
                 checked={filters.diameter === diam}
                 onChange={() => handleDiameterChange(diam)}
-                className="w-4 h-4 text-primary rounded border-border focus:ring-primary focus:ring-offset-0 cursor-pointer" 
+                className="w-4 h-4 text-primary rounded-none border-border focus:ring-primary focus:ring-offset-0 cursor-pointer" 
               />
               <span className="text-sm text-muted group-hover:text-text-main transition-colors">{diam}</span>
             </label>
@@ -91,7 +91,7 @@ export default function ShopSidebar({ filters, setFilters }: ShopSidebarProps) {
             type="checkbox" 
             checked={filters.inStockOnly}
             onChange={(e) => setFilters(prev => ({ ...prev, inStockOnly: e.target.checked }))}
-            className="w-4 h-4 text-primary rounded border-border focus:ring-primary focus:ring-offset-0 cursor-pointer" 
+            className="w-4 h-4 text-primary rounded-none border-border focus:ring-primary focus:ring-offset-0 cursor-pointer" 
           />
           <span className="text-sm text-text-main font-semibold">Apenas Pronta Entrega</span>
         </label>

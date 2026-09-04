@@ -38,7 +38,7 @@ export default function ShopProductGrid({ products }: ShopProductGridProps) {
         <div className="flex items-center gap-4 text-sm w-full sm:w-auto justify-between sm:justify-end">
           
           {/* View Mode Toggles */}
-          <div className="flex bg-surface border border-border rounded-sm overflow-hidden">
+          <div className="flex bg-surface border border-border rounded-none overflow-hidden">
             <button 
               onClick={() => setViewMode('grid')}
               className={`p-2 transition-colors ${viewMode === 'grid' ? 'bg-primary text-white' : 'text-muted hover:text-primary hover:bg-zinc-100'}`}
@@ -83,7 +83,7 @@ export default function ShopProductGrid({ products }: ShopProductGridProps) {
         </div>
       ) : (
         <div className="bg-white border border-border p-12 text-center shadow-sm">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-surface text-muted mb-4">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-none bg-surface text-muted mb-4">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-8 h-8">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>

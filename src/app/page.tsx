@@ -64,10 +64,10 @@ export default function Home() {
               </div>
 
               <div className="hidden lg:flex relative h-[600px] w-full items-center justify-end">
-                <div className="absolute w-[140%] aspect-square bg-primary/5 rounded-full blur-3xl right-0 translate-x-1/4"></div>
+                <div className="absolute w-[140%] aspect-square bg-primary/5 blur-3xl right-0 translate-x-1/4"></div>
                 <img
                   src="/_legacy_imgs/img.webp"
-                  alt="WL Precision 3D Emblem"
+                  alt="BoostFix Usinagem 3D Emblem"
                   className="relative z-10 w-full max-w-[500px] object-contain drop-shadow-2xl animate-float"
                 />
               </div>

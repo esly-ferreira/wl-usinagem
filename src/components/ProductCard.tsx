@@ -14,12 +14,12 @@ export default function ProductCard({ product, viewMode = 'grid' }: ProductCardP
   const isList = viewMode === 'list';
 
   const containerClasses = isList 
-    ? 'flex flex-row items-center' 
-    : 'flex flex-row md:flex-col items-center md:items-stretch';
+    ? 'flex flex-row items-stretch' 
+    : 'flex flex-row md:flex-col items-stretch';
 
   const imageClasses = isList
-    ? 'w-1/3 md:w-[200px] shrink-0 aspect-square'
-    : 'w-2/5 md:w-full shrink-0 aspect-square';
+    ? 'w-1/3 md:w-[220px] shrink-0 self-stretch min-h-[160px]'
+    : 'w-2/5 md:w-full shrink-0 self-stretch md:aspect-square min-h-[160px] md:min-h-0';
 
   const infoClasses = isList
     ? 'w-2/3 md:w-full flex-grow p-4 md:p-6 justify-center'
@@ -28,8 +28,8 @@ export default function ProductCard({ product, viewMode = 'grid' }: ProductCardP
   return (
     <div className={`group bg-white border border-border shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_10px_24px_rgba(211,47,47,0.08)] hover:border-primary hover:-translate-y-0.5 transition-all duration-300 ${containerClasses}`}>
       
-      <Link href={`/produto/${product.id}`} className={`relative bg-[#f3f4f6] overflow-hidden flex items-center justify-center cursor-pointer ${imageClasses}`}>
-        <div className="text-center group-hover:scale-105 transition-transform duration-500 scale-75 md:scale-100">
+      <Link href={`/produto/${product.id}`} className={`relative bg-[#f3f4f6] border-r md:border-r-0 md:border-b border-border overflow-hidden flex items-center justify-center cursor-pointer ${imageClasses}`}>
+        <div className="text-center group-hover:scale-105 transition-transform duration-500 scale-75 md:scale-100 p-4">
           <span className="text-2xl md:text-4xl font-heading font-bold text-muted drop-shadow-sm uppercase">
             {product.diameter}
           </span>
@@ -38,8 +38,12 @@ export default function ProductCard({ product, viewMode = 'grid' }: ProductCardP
           </div>
         </div>
         
-        <div className="hidden md:block absolute top-4 left-4 bg-dark px-2 py-1 font-heading text-xs font-semibold uppercase tracking-wider text-white z-10">
-          SKU: {product.sku}
+        <div className="hidden md:block absolute top-4 left-4 z-10">
+          <div className="inline-block bg-dark px-2.5 py-1 -skew-x-12 shadow-sm">
+            <span className="block text-white text-xs font-mono font-semibold uppercase tracking-wider skew-x-12">
+              SKU: {product.sku}
+            </span>
+          </div>
         </div>
       </Link>
 
@@ -71,7 +75,7 @@ export default function ProductCard({ product, viewMode = 'grid' }: ProductCardP
         <div className="mt-auto">
           {product.price && (
             <div className="mb-2 md:mb-4">
-              <div className="text-lg md:text-2xl font-bold text-text-main leading-tight">
+              <div className="text-lg md:text-2xl font-bold font-sans text-text-main leading-tight">
                 {new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.price)}
               </div>
               <div className="text-[10px] md:text-xs text-green-600 font-medium">
@@ -80,13 +84,13 @@ export default function ProductCard({ product, viewMode = 'grid' }: ProductCardP
             </div>
           )}
 
-          <div className="text-xs text-green-600 font-semibold mb-3">
-            Frete grátis
+          <div className="text-xs text-primary font-semibold mb-3 uppercase tracking-wider">
+            Despacho Imediato
           </div>
 
           <Link 
             href={`/produto/${product.id}`}
-            className={`block text-center w-full md:w-auto md:px-8 py-2 md:p-3 font-heading font-bold uppercase text-xs md:text-sm bg-primary border-transparent text-white cursor-pointer transition-all duration-300 hover:bg-primary-hover shadow-md hover:shadow-lg rounded-sm ${isList ? 'lg:w-auto' : ''}`}
+            className={`block text-center w-full md:w-auto md:px-8 py-2 md:p-3 font-heading font-bold uppercase text-xs md:text-sm bg-primary border-transparent text-white cursor-pointer transition-all duration-300 hover:bg-primary-hover shadow-md hover:shadow-lg rounded-none ${isList ? 'lg:w-auto' : ''}`}
           >
             Ver Produto
           </Link>

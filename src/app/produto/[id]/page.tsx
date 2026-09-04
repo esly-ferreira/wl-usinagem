@@ -46,7 +46,7 @@ export default function ProdutoPage() {
           <span className="text-text-main font-semibold truncate">{product.name}</span>
         </div>
 
-        <div className="bg-white shadow-sm rounded-sm p-4 lg:p-8">
+        <div className="bg-white shadow-sm rounded-none p-4 lg:p-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             
             {/* Esquerda: Galeria de Imagens (lg:col-span-5) */}
@@ -54,14 +54,14 @@ export default function ProdutoPage() {
               {/* Miniaturas */}
               <div className="flex md:flex-col gap-2 overflow-x-auto md:overflow-visible">
                 {[1, 2, 3, 4].map(idx => (
-                  <div key={idx} className={`w-12 h-12 md:w-16 md:h-16 border rounded-sm flex items-center justify-center cursor-pointer ${idx === 1 ? 'border-primary border-2' : 'border-border hover:border-zinc-400'}`}>
+                  <div key={idx} className={`w-12 h-12 md:w-16 md:h-16 border rounded-none flex items-center justify-center cursor-pointer ${idx === 1 ? 'border-primary border-2' : 'border-border hover:border-zinc-400'}`}>
                     <span className="text-[10px] font-bold text-muted">{product.diameter}</span>
                   </div>
                 ))}
               </div>
               
               {/* Imagem Principal */}
-              <div className="flex-1 aspect-square bg-[#f3f4f6] rounded-sm flex items-center justify-center relative border border-border">
+              <div className="flex-1 aspect-square bg-[#f3f4f6] rounded-none flex items-center justify-center relative border border-border">
                 <div className="text-center">
                   <span className="text-6xl md:text-8xl font-heading font-bold text-muted drop-shadow-sm uppercase">
                     {product.diameter}
@@ -94,17 +94,19 @@ export default function ProdutoPage() {
                 <span className="text-sm text-muted">(118)</span>
               </div>
 
-              {/* Tag de destaque */}
+              {/* Tag de destaque chanfrada */}
               <div className="mb-6">
-                <span className="bg-primary text-white text-xs font-bold uppercase tracking-wider px-2 py-1 rounded-sm">
-                  Mais vendido
-                </span>
+                <div className="inline-block bg-primary px-3 py-1 -skew-x-12">
+                  <span className="block text-white text-xs font-bold uppercase tracking-wider skew-x-12">
+                    Mais vendido
+                  </span>
+                </div>
               </div>
 
               {/* Características */}
               <div className="mb-6">
                 <h3 className="font-semibold text-text-main mb-3">Características principais</h3>
-                <table className="w-full text-sm border border-border rounded-sm overflow-hidden">
+                <table className="w-full text-sm border border-border rounded-none overflow-hidden">
                   <tbody>
                     <tr className="border-b border-border bg-surface/50">
                       <td className="py-2 px-3 font-semibold text-muted w-1/3">SKU</td>
@@ -140,13 +142,13 @@ export default function ProdutoPage() {
 
             {/* Direita: Buy Box (lg:col-span-3) */}
             <div className="lg:col-span-3">
-              <div className="border border-border rounded-lg p-6 lg:sticky lg:top-24">
+              <div className="border border-border rounded-none p-6 lg:sticky lg:top-24 bg-white">
                 
                 {/* Preço */}
                 <div className="mb-6">
                   {product.price && (
                     <>
-                      <div className="text-4xl font-bold text-text-main tracking-tight">
+                      <div className="text-4xl font-bold font-sans text-text-main tracking-tight">
                         {new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.price)}
                       </div>
                       <div className="text-sm text-green-600 font-medium mt-1">
@@ -159,27 +161,19 @@ export default function ProdutoPage() {
                   </Link>
                 </div>
 
-                {/* Frete e Estoque */}
-                <div className="mb-6 space-y-4">
-                  <div className="flex gap-3">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-6 h-6 text-green-600 flex-shrink-0">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                {/* Envio industrial */}
+                <div className="mb-6 space-y-3">
+                  <div className="flex gap-3 items-center">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-5 h-5 text-primary flex-shrink-0">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                     </svg>
-                    <div>
-                      <div className="text-green-600 font-semibold text-sm">Chegará grátis amanhã</div>
-                      <div className="text-muted text-xs">Comprando dentro das próximas 2 h</div>
-                    </div>
+                    <div className="text-xs text-text-main font-semibold">Envio para todo o Brasil via Transportadora ou Correios</div>
                   </div>
-
-                  <div className="flex gap-3">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-6 h-6 text-green-600 flex-shrink-0">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <div className="flex gap-3 items-center">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-5 h-5 text-primary flex-shrink-0">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
-                    <div>
-                      <div className="text-green-600 font-semibold text-sm">Retire grátis amanhã</div>
-                      <div className="text-muted text-xs">Em uma agência perto de você</div>
-                    </div>
+                    <div className="text-xs text-text-main font-semibold">Despacho imediato para itens em estoque</div>
                   </div>
                 </div>
 
@@ -193,17 +187,16 @@ export default function ProdutoPage() {
                   <button 
                     onClick={() => {
                       addToCart(product);
-                      // TODO: Navigate to checkout ideally
                     }}
                     disabled={!product.inStock}
-                    className="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3 px-4 rounded-sm transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3 px-4 rounded-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed uppercase tracking-wider text-sm"
                   >
                     Comprar agora
                   </button>
                   <button 
                     onClick={() => addToCart(product)}
                     disabled={!product.inStock}
-                    className="w-full bg-blue-50 hover:bg-blue-100 text-primary font-bold py-3 px-4 rounded-sm transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-surface border border-border hover:bg-zinc-100 text-text-main font-bold py-3 px-4 rounded-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed uppercase tracking-wider text-sm"
                   >
                     Adicionar ao carrinho
                   </button>
